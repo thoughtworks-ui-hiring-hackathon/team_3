@@ -7,7 +7,7 @@ import Results from './components/Results'
 import './explore.scss';
 
 const Explore = () => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState('harry potter'); // default query
   const [rating, setRating] = useState('');
 
   const handleFormSubmit = e => e.preventDefault();

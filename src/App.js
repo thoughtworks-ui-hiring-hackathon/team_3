@@ -14,11 +14,11 @@ import Explore from './screens/explore';
 const App = () => {
     return (
         <div className="App">
-            <Header/>
             <Router>
+                <Header/>
                 <Switch>
                     <Route exact path="/" component={Home}/>
-                    <Route path="/explore" component={Explore}/>
+                    <Route exact path="/explore" component={Explore}/>
                     <Route path="/movie/:ID" component={Details}/>
                     <Route path="/actor/:ID" component={ActorDetails}/>
                 </Switch>
