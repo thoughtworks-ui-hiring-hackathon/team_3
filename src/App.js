@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Home from './screens/home';
 import Details from './screens/details';
 import ActorDetails from './screens/actor';
+import Explore from './screens/explore';
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
             <Router>
                 <Switch>
                     <Route exact path="/" component={Home}/>
+                    <Route path="/explore" component={Explore}/>
                     <Route path="/movie/:ID" component={Details}/>
                     <Route path="/actor/:ID" component={ActorDetails}/>
                 </Switch>
