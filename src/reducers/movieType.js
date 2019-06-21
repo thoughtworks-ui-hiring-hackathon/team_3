@@ -7,10 +7,11 @@ export default (state = {}, action) => {
     const {type, payload} = action;
     switch (type) {
         case SET_MOBILE_TYPE_RESPONSE:
-            return {
+            const newState = {
                 ...state,
                 ...payload
             }
+            return newState
         default:
             return state
     }

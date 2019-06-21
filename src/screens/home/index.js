@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import '../../scss/style.scss';
 import {getMovieByType} from '../../actions/getMovie';
 import MovieList from '../../components/MovieList';
 import {MOVIE_CATEGORY} from '../../consts';
+import './home.scss'
 
 class Home extends React.PureComponent {
 	render() {
