@@ -1,6 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
-const Movie = ({image, title, movieType, stars}) => {
+const Movie = ({image, title, movieType, stars, movieId}) => {
     return (
         <div className='movie-wrapper'>
             <img className='image' src={image} />
@@ -14,7 +15,7 @@ const Movie = ({image, title, movieType, stars}) => {
                 {stars}
             </div>
             <div className='show-more'>
-                Show More
+                <Link to={`/movie/${movieId}`}>Show more</Link>
             </div>
         </div>
     );
