@@ -1,0 +1,23 @@
+.movie-list {
+  padding: 20px;
+  .title {
+    font-weight: bold;
+    font-size: 35px;
+    margin:0 20px 20px;
+  }
+}
+
+.movie-collection {
+  height: 443px;
+  overflow-x: scroll;
+}
+
+.movie-wrapper {
+  display: inline-block;
+  width: 25%;
+  padding: 20px;
+
+  .image {
+    width: 100%;
+  }
+}

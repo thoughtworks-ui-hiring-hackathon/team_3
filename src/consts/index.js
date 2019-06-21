@@ -1,6 +1,11 @@
 const IMG_BASE_URL = 'https://image.tmdb.org/t/p/w500/';
 
 const MOVIE_CATEGORY = {
+    LATEST: 'LATEST',
+    TRENDING: 'TRENDING'
+}
+
+const MOVIE_CATEGORY_STRING = {
     LATEST: 'Latest',
     TRENDING: 'Trending'
 }
@@ -12,5 +17,7 @@ const MOVIE_CATEGORY_URL = {
 
 export {
     IMG_BASE_URL,
-    MOVIE_CATEGORY
+    MOVIE_CATEGORY,
+    MOVIE_CATEGORY_STRING,
+    MOVIE_CATEGORY_URL
 };
