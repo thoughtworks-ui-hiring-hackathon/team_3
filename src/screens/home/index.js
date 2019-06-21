@@ -7,19 +7,23 @@ import {MOVIE_CATEGORY} from '../../consts';
 
 class Home extends React.PureComponent {
 	render() {
-		const {getMovieByType} = this.props;
+		const {getMovieByType, movieType} = this.props;
 		return (
 			<MovieList
 				type = {MOVIE_CATEGORY.LATEST}
 				getMovieByType={getMovieByType}
+				movieType={movieType}
 			/>
 		);
 	}
 }
 
-const mapStateToProps = state => ({
-	...state
-})
+const mapStateToProps = state => {
+	const {movieType} = state;
+	return {
+		movieType
+	};
+}
 
 const mapDispatchToProps = dispatch => ({
 	getMovieByType: (type) => dispatch(getMovieByType(type))

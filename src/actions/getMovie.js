@@ -14,9 +14,11 @@ const setMobileResponse = (response, type) => dispatch => {
 }
 
 export const getMovieByType = (type) => {
-    const url = MOVIE_CATEGORY_URL[type];
-    axios.get(`${url}${API_KEY}`)
-        .then((response) => {
-            setMobileResponse(response, MOVIE_CATEGORY[type])
-        })
+    return (dispatch) => {
+        const url = MOVIE_CATEGORY_URL[type];
+        return axios.get(`${url}${API_KEY}`)
+            .then((response) => {
+                dispatch(setMobileResponse(response.data, MOVIE_CATEGORY[type]))
+            })
+    }
 }
