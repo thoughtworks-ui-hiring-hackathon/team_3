@@ -1,7 +1,22 @@
-.movie-collection {
-  height: 100px;
+.movie-list {
+  padding: 20px;
+  .title {
+    font-weight: bold;
+    font-size: 35px;
+    margin:0 20px 20px;
+  }
 }
+
+.movie-collection {
+
+}
+
 .movie-wrapper {
   display: inline-block;
-  width: 250px;
+  width: 25%;
+  padding: 20px;
+
+  .image {
+    width: 100%;
+  }
 }
