@@ -1,36 +1,38 @@
-import React, { Component } from "react";
-import { Provider } from 'react-redux'
-import { ConnectedRouter } from 'connected-react-router'
-import store, { history } from './configureStore';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import logo from './logo.svg';
+import './scss/style.scss';
+import {simpleAction} from './actions/simple-action';
 
-// Styles
-import 'bootstrap/dist/css/bootstrap.css';
-import './App.scss';
-
-// routes
-import routes from './routes';
-
-// common components
-import Header from './common/components/Header'
-import Footer from './common/components/Footer'
 
 class App extends Component {
 
-  render() {
-    return (
-      <Provider store={store}>
-        <ConnectedRouter history={history}>
-          <div className="App">
-            <Header />
-            <div className="wrap">
-              {routes}
-            </div>
-            <Footer />
-          </div>
-        </ConnectedRouter>
-      </Provider>
-    );
-  }
+	simpleAction = event => this.props.simpleAction();
+
+	render() {
+		return (
+			<div className="App">
+				<header className="App-header">
+					<img src={logo} className="App-logo" alt="logo"/>
+					<h1 className="App-title">
+						Welcome to ThoughtWorks UI Dev Hiring Hackathon
+					</h1>
+					<pre>
+					  {JSON.stringify(this.props.simpleReducer)}
+					</pre>
+					<button onClick={this.simpleAction}>Test Sample Redux Action</button>
+				</header>
+			</div>
+		);
+	}
 }
 
-export default App;
+const mapStateToProps = state => ({
+	...state
+})
+
+const mapDispatchToProps = dispatch => ({
+	simpleAction: () => dispatch(simpleAction())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

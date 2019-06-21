@@ -1,116 +1,68 @@
-# cra-boilerplate
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available Scripts
 
-This project is an [Create React App - v2.1.1](https://facebook.github.io/create-react-app/) boilerplate
-with integration of Redux, React Router, Redux thunk & Reactstrap(Bootstrap v4)
+In the project directory, you can run:
 
-[![Build Status](https://travis-ci.org/mohandere/cra-boilerplate.svg?branch=master)](https://travis-ci.org/mohandere/cra-boilerplate) [![Dependency Status](https://dependencyci.com/github/mohandere/cra-boilerplate/badge)](https://dependencyci.com/github/mohandere/cra-boilerplate)
+### `npm start`
 
-Before starting with project, please headover to [CRA](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md
-) documentation.
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-#### Features
+### `npm test`
 
-- [Domain-style](https://github.com/reactjs/redux/blob/master/docs/faq/CodeStructure.md) for code structure
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Getting Started
+### `npm run build`
 
-1. Clone this repo
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-`https://github.com/mohandere/cra-boilerplate.git`
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-2. To run, go to project folder and run
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-`$ yarn install` (if you are using yarn)
+### `npm run eject`
 
-3. Now start dev server by running -
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-`$ yarn start`
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-4. visit - http://localhost:3000/
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-To create production ready codes -
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-`$ yarn build`
+## Learn More
 
-5. Analyze source code / bundle size
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-`$ yarn analyze`
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-for more commands refer `package.json`
+### Code Splitting
 
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-## Roadmap
+### Analyzing the Bundle Size
 
-Before starting development please go through -
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-- [Presentational and Container Components
-](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
-- [All the fundamental React.js concepts, jammed into this single Medium article](https://medium.freecodecamp.org/all-the-fundamental-react-js-concepts-jammed-into-this-single-medium-article-c83f9b53eac2)
-- [When do I know I’m ready for Redux?](https://medium.com/dailyjs/when-do-i-know-im-ready-for-redux-f34da253c85f)
+### Making a Progressive Web App
 
-## Code structure
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-Refer `src/home/` module for an ideal directory structure
+### Advanced Configuration
 
-Project uses `Domain-style` for code structure-
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-Domain-style : separate folders per feature or domain, possibly with sub-folders per file type
+### Deployment
 
-For more details refer `/src/home` folder.
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-Reference -
+### `npm run build` fails to minify
 
-- http://redux.js.org/docs/faq/CodeStructure.html
-- http://engineering.kapost.com/2016/01/organizing-large-react-applications/
-
-#### Common components
-
-Place all common components such as Header/Footer in `src/common/components` folder.
-
-
-### Adding new Module/Feature
-
-- Create a Module/Feature folder at `src/`
-like - - `src/home`
-Feature folder must contain booststrap file named `index.js` and css file 'style.css' at root
-
-Like -
-
-- `src/home/index.js`
-- `src/home/style.scss`
-
-Next as per need, add sub folders like -
-
-- `src/home/actions/`
-- `src/home/reducers/`
-- `src/home/thunks/`
-- `src/home/containers/`
-- `src/home/components/`
-
-
-### Actions
-
-- Create folder named `actions` inside Feature folder like - `src/home/actions`
-- Place `actionTypes.js` which contains all actions to be exported
-
-### Reducers
-
- - Create folder named `reducers` inside Feature folder like - `src/home/reducers`
-- Place `index.js` which combines all reducers using `combineReducers`
-
-## Deployment
-
-Refer [deployment](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment) section from CRA doc.
-
-
-## Issues / Suggestions ?
-
-File an issue [here](https://github.com/mohandere/cra-boilerplate/issues).
-
-
-## License
-
-MIT
-
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
