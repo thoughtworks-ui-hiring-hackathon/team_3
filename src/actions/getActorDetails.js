@@ -1,6 +1,5 @@
 import axios from 'axios';
 import {API_KEY} from '../config/api-keys';
-import {URL} from "../consts";
 
 export const SET_ACTOR_DETAILS = 'SET_MOBILE_TYPE_RESPONSE';
 export const SET_ACTOR_FILMOGRAPHY = 'SET_ACTOR_FILMOGRAPHY';
@@ -8,13 +7,15 @@ export const SET_ACTOR_FILMOGRAPHY = 'SET_ACTOR_FILMOGRAPHY';
 const setActorDetails = (data) => dispatch => {
     return dispatch ({
         type: SET_ACTOR_DETAILS,
-        payload: data,
+        payload: {
+            actor: data
+        },
     })
 }
 
-export const getActorDetails = (type) => {
+export const getActorDetails = (personId) => {
     return (dispatch) => {
-        const url = URL.ACTOR_DETAILS;
+        const url = `https://api.themoviedb.org/3/person/${personId}/?language=en-US&api_key=`;
         return axios.get(`${url}${API_KEY}`)
             .then((response) => {
                 dispatch(setActorDetails(response.data))
@@ -25,13 +26,15 @@ export const getActorDetails = (type) => {
 const setActorFilmography = (data) => dispatch => {
     return dispatch ({
         type: SET_ACTOR_FILMOGRAPHY,
-        payload: data,
+        payload: {
+            filmography: data
+        },
     })
 }
 
-export const getActorFilmography = (type) => {
+export const getActorFilmography = (personId) => {
     return (dispatch) => {
-        const url = URL.ACTOR_FILMOGRAPHY;
+        const url = `https://api.themoviedb.org/3/person/${personId}/movie_credits/?language=en-US&api_key=`;
         return axios.get(`${url}${API_KEY}`)
             .then((response) => {
                 dispatch(setActorFilmography(response.data))

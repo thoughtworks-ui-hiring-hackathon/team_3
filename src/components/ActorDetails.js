@@ -1,9 +1,14 @@
 import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 
-const ActorDetails = ({image, title, movieType, stars, movieId}) => {
+const ActorDetails = (props) => {
     return (
-        <div className='movie-wrapper'>
-            Hello
+        <div className='actor-wrapper'>
+            <Row>
+                <Col sm={6}>
+                    <img className="image" src='' />
+                </Col>
+            </Row>
         </div>
     );
 }

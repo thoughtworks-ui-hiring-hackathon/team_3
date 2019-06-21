@@ -1,39 +1,36 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {getActorDetails, getActorFilmography} from '../../actions/getActorDetails';
-import MovieList from '../../components/MovieList';
-import {MOVIE_CATEGORY} from '../../consts';
-import './home.scss'
+import ActorDetails from "../../components/ActorDetails";
 
 class Home extends React.PureComponent {
+	componentDidMount() {
+		let { params } = this.props.match;
+		this.props.getActorDetails(params.ID);
+		this.props.getActorFilmography(params.ID);
+	}
+
 	render() {
-		const {getMovieByType, movieType} = this.props;
+		const {match, actorDetails} = this.props;
 		return (
-			<>
-				<MovieList
-					type = {MOVIE_CATEGORY.LATEST}
-					getMovieByType={getMovieByType}
-					movieType={movieType}
-				/>
-				<MovieList
-					type = {MOVIE_CATEGORY.TRENDING}
-					getMovieByType={getMovieByType}
-					movieType={movieType}
-				/>
-			</>
+			<ActorDetails
+				actorId={match.params.ID}
+				{...actorDetails}
+			/>
 		);
 	}
 }
 
 const mapStateToProps = state => {
-	const {movieType} = state;
+	const {actorDetails} = state;
 	return {
-		movieType
+		actorDetails
 	};
 }
 
 const mapDispatchToProps = dispatch => ({
-	getActorDetails: (id) => dispatch(getActorDetails(id))
+	getActorDetails: (id) => dispatch(getActorDetails(id)),
+	getActorFilmography: (id) => dispatch(getActorFilmography(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
