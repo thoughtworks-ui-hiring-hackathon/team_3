@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {fetchMovie} from '../../actions/movie-actions';
 import isEmpty from 'lodash/isEmpty'
-
+import Container from 'react-bootstrap/Container'
 import Banner from './components/Banner'
 import Info from './components/Info'
 
@@ -35,9 +35,11 @@ class Details extends React.PureComponent {
 
     return (
       <>
+      <Container>
         <h1>Movie Details</h1>
         <Banner info={info} />
         <Info info={info} />
+      </Container>
       </>
     )
   }

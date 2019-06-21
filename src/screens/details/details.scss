@@ -1,5 +1,8 @@
-.banner {
-  img {
-    max-height: 30vh;
-  }
+.movie--banner {
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
+}
+.movie--info {
+  padding: 50px 0;
 }
