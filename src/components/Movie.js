@@ -12,19 +12,21 @@ const Movie = ({
 }) => {
   return (
     <div className="movie-wrapper">
-      <img
-        className="movie-image"
-        src={image}
-        onClick={() => setSelectedMovie(movieId)}
-        alt={title}
-      />
-      <h4 className="movie-name">
-      <span>{title}</span>
-      <FaHeart />
-      </h4>
-      <div className="movie-ratings">{stars}</div>
-      <div className="movie-show-more">
-        <Link to={`/movie/${movieId}`}>Show more</Link>
+      <div className="movie-inner">
+        <img
+          className="movie-image"
+          src={image}
+          onClick={() => setSelectedMovie(movieId)}
+          alt={title}
+        />
+        <h4 className="movie-name">
+        <span>{title}</span>
+        <FaHeart />
+        </h4>
+        <div className="movie-ratings">
+          <span>{stars}</span>
+          <Link to={`/movie/${movieId}`}>Show more</Link>
+        </div>
       </div>
     </div>
   );
