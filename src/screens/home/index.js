@@ -1,25 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getMovieByType } from '../../actions/getMovie';
+import Container from 'react-bootstrap/Container'
+
 import MovieList from '../../components/MovieList';
+import { getMoviesByType } from '../../actions/movies-actions';
 import { MOVIE_CATEGORY } from '../../consts';
 import './home.scss';
 
 class Home extends React.PureComponent {
   render() {
-    const { getMovieByType, movieType } = this.props;
+    const { getMoviesByType, movieType } = this.props;
     return (
       <>
-        <MovieList
-          type={MOVIE_CATEGORY.LATEST}
-          getMovieByType={getMovieByType}
-          movieType={movieType}
-        />
-        <MovieList
-          type={MOVIE_CATEGORY.TRENDING}
-          getMovieByType={getMovieByType}
-          movieType={movieType}
-        />
+        <Container>
+          <MovieList
+            type={MOVIE_CATEGORY.LATEST}
+            getMoviesByType={getMoviesByType}
+            movieType={movieType}
+          />
+          <MovieList
+            type={MOVIE_CATEGORY.TRENDING}
+            getMoviesByType={getMoviesByType}
+            movieType={movieType}
+          />
+        </Container>
       </>
     );
   }
@@ -33,7 +37,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  getMovieByType: type => dispatch(getMovieByType(type))
+  getMoviesByType: type => dispatch(getMoviesByType(type))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

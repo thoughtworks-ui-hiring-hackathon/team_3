@@ -1,4 +1,4 @@
-import { SET_MOBILE_TYPE_RESPONSE } from '../actions/getMovie';
+import { SET_MOBILE_TYPE_RESPONSE } from '../actions/movies-actions';
 
 export default (state = {}, action) => {
   const { type, payload } = action;
