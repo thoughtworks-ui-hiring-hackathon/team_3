@@ -9,11 +9,18 @@ class Home extends React.PureComponent {
 	render() {
 		const {getMovieByType, movieType} = this.props;
 		return (
-			<MovieList
-				type = {MOVIE_CATEGORY.LATEST}
-				getMovieByType={getMovieByType}
-				movieType={movieType}
-			/>
+			<>
+				<MovieList
+					type = {MOVIE_CATEGORY.LATEST}
+					getMovieByType={getMovieByType}
+					movieType={movieType}
+				/>
+				<MovieList
+					type = {MOVIE_CATEGORY.TRENDING}
+					getMovieByType={getMovieByType}
+					movieType={movieType}
+				/>
+			</>
 		);
 	}
 }
