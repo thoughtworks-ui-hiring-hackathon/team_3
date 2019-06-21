@@ -3,8 +3,7 @@ import useFetch from '../../../hooks/useFetch';
 import Movie from '../../../components/Movie';
 import isEmpty from 'lodash/isEmpty';
 
-const Results = ({query}) => {
-
+const Results = ({ query }) => {
   const { loading, error, res } = useFetch({
     url: `https://api.themoviedb.org/3/search/multi`,
     params: {
@@ -22,15 +21,12 @@ const Results = ({query}) => {
     return <p className="alert alert-danger">{JSON.stringify(error)}</p>;
   }
 
-
   const { results } = res;
-  let searchResults = ''
+  let searchResults = '';
   if (isEmpty(results)) {
     searchResults = (
-      <p className="alert alert-info no-results-alert">
-        No results
-      </p>
-    )
+      <p className="alert alert-info no-results-alert">No results</p>
+    );
   } else {
     searchResults = results.map(movie => {
       return (
@@ -46,16 +42,12 @@ const Results = ({query}) => {
     });
   }
 
-
   return (
     <div className="search-results">
-    <h2>Results</h2>
-      <div id="results">
-        {searchResults}
-      </div>
+      <h2>Results</h2>
+      <div id="results">{searchResults}</div>
     </div>
   );
-
-}
+};
 
 export default Results;

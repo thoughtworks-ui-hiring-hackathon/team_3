@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import isEmpty from 'lodash/isEmpty';
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Info = ({ info }) => {
   if (isEmpty(info)) {
@@ -16,13 +16,13 @@ const Info = ({ info }) => {
   ));
 
   // Get cast
-  let { cast } = credits
-  cast = isEmpty(cast) ? [] : cast
+  let { cast } = credits;
+  cast = isEmpty(cast) ? [] : cast;
   let castsHtml = cast.map((item, index) => (
-      <span key={item.cast_id}>
-       <Link to={`/actor/${item.cast_id}`}>{`${item.name}, `}</Link>
-      </span>
-  ))
+    <span key={item.cast_id}>
+      <Link to={`/actor/${item.cast_id}`}>{`${item.name}, `}</Link>
+    </span>
+  ));
 
   // Get director
   let { crew } = credits;

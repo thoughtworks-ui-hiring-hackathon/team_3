@@ -8,9 +8,14 @@ const Search = () => {
   return (
     <Form onSubmit={handleFormSubmit}>
       <Form.Group controlId="formBasicEmail">
-        <Form.Control type="text" placeholder="Search movies, actors, genre..." onChange={setQuery} value={query} />
+        <Form.Control
+          type="text"
+          placeholder="Search movies, actors, genre..."
+          onChange={setQuery}
+          value={query}
+        />
       </Form.Group>
     </Form>
-  )
-}
+  );
+};
 export default Search;

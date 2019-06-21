@@ -46,16 +46,12 @@ class MovieList extends React.PureComponent {
       <Slider className="carousel" {...carouselSettings}>
         {movieCollection}
       </Slider>
-    )
+    );
 
     return (
       <div className="movie-list">
-        <h2 className="movie-title">
-          {MOVIE_CATEGORY_STRING[type]}
-        </h2>
-        <div className="movie-collection">
-          {slider}
-        </div>
+        <h2 className="movie-title">{MOVIE_CATEGORY_STRING[type]}</h2>
+        <div className="movie-collection">{slider}</div>
       </div>
     );
   }
