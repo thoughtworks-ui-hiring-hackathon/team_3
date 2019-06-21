@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import configureStore from './store';
 import './scss/_index.css';
@@ -11,9 +11,11 @@ import Details from './screens/details';
 ReactDOM.render(
 	<Provider store={configureStore()}>
 		<Router>
-			<Route path="/" component={App}/>
-			<Route path="/movie/:ID" component={Details}/>
+			<Switch>
+				<Route path="/movie/:ID" component={Details}/>
+				<Route path="/" component={App}/>
+			</Switch>
 		</Router>
 	</Provider>,
-	document.getElementById('root')
+	document.getElementById	('root')
 );
