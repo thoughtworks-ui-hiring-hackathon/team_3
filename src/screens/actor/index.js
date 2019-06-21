@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {getActorDetails, getActorFilmography} from '../../actions/getActorDetails';
 import ActorDetails from "../../components/ActorDetails";
+import './actor.scss';
 
 class Home extends React.PureComponent {
 	componentDidMount() {
