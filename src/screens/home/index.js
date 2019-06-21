@@ -1,15 +1,18 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import '../../scss/style.scss';
-import {simpleAction} from '../../actions/simple-action';
+import {getMovieByType} from '../../actions/getMovie';
 import MovieList from '../../components/MovieList';
 import {MOVIE_CATEGORY} from '../../consts';
 
 class Home extends React.PureComponent {
-	simpleAction = event => this.props.simpleAction();
 	render() {
+		const {getMovieByType} = this.props;
 		return (
-			<MovieList type = {MOVIE_CATEGORY.LATEST}/>
+			<MovieList
+				type = {MOVIE_CATEGORY.LATEST}
+				getMovieByType={getMovieByType}
+			/>
 		);
 	}
 }
@@ -19,7 +22,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-	simpleAction: () => dispatch(simpleAction())
+	getMovieByType: (type) => dispatch(getMovieByType(type))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
