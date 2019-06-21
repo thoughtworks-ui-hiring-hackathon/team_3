@@ -1,7 +1,8 @@
 import {
   SET_ACTOR_FILMOGRAPHY,
   SET_ACTOR_DETAILS
-} from '../actions/getActorDetails';
+} from '../actions/actor-actions';
+
 
 export default (state = {}, action) => {
   const { type, payload } = action;

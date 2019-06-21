@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
   getActorDetails,
   getActorFilmography
-} from '../../actions/getActorDetails';
+} from '../../actions/actor-actions';
 import ActorDetails from '../../components/ActorDetails';
 import './actor.scss';
 
