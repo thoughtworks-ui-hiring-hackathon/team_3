@@ -1,7 +1,6 @@
 import React from 'react';
 import {Modal, Button} from 'react-bootstrap';
 import Info from '../screens/details/components/Info';
-import {clearSelectedMovie} from "../actions/movies-actions";
 
 export default class MovieDetailsPopup extends React.Component {
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -14,6 +13,9 @@ export default class MovieDetailsPopup extends React.Component {
 
     render() {
         const {selectedMovie, clearSelectedMovie, info} = this.props;
+        if (selectedMovie == undefined) {
+            return null;
+        }
         return (
             <>
                 <Modal show={selectedMovie} onHide={clearSelectedMovie}>
