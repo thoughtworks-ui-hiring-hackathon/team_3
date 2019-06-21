@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { API_KEY } from '../config/api-keys';
-import { MOVIE_CATEGORY_URL, MOVIE_CATEGORY } from '../consts';
+import { MOVIE_CATEGORY_URL, MOVIE_CATEGORY } from '../config/constants.js';
 
 export const SET_MOBILE_TYPE_RESPONSE = 'SET_MOBILE_TYPE_RESPONSE';
 export const SET_SELECTED_MOVIE = 'SET_SELECTED_MOVIE';

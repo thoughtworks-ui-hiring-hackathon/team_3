@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import { isEmpty } from 'lodash';
-import { IMG_BASE_URL } from '../consts';
+import { IMG_BASE_URL } from '../config/constants.js';
 
 const ActorDetails = props => {
   const { actor, filmography } = props;

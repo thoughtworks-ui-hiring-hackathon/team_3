@@ -9,7 +9,7 @@ import {
   clearSelectedMovie
 } from '../../actions/movies-actions';
 import { fetchMovie } from '../../actions/movie-actions';
-import { MOVIE_CATEGORY } from '../../consts';
+import { MOVIE_CATEGORY } from '../../config/constants.js';
 import './home.scss';
 import MovieDetailsPopup from '../../components/MovieDetailsPopup';
 

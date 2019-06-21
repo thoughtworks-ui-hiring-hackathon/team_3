@@ -1,7 +1,7 @@
 import React from 'react';
-import { IMG_BASE_URL } from '../consts';
+import { IMG_BASE_URL } from '../config/constants.js';
 import Movie from './Movie';
-import { MOVIE_CATEGORY_STRING } from '../consts';
+import { MOVIE_CATEGORY_STRING } from '../config/constants.js';
 import { isEmpty } from 'lodash';
 import Slider from 'react-slick';
 
