@@ -78,7 +78,7 @@ export default function useFetch({ url, params, method = 'GET' }) {
           });
         });
     },
-    [url, params]
+    [url, params, oldParams]
   );
   const { loading, error, res } = state;
   return { loading, error, res };

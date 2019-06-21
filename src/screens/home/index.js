@@ -11,18 +11,13 @@ import {
 import { fetchMovie } from '../../actions/movie-actions';
 import { MOVIE_CATEGORY } from '../../config/constants.js';
 import './home.scss';
-import MovieDetailsPopup from '../../components/MovieDetailsPopup';
 
 class Home extends React.PureComponent {
   render() {
     const {
       getMoviesByType,
       movieType,
-      setSelectedMovie,
-      clearSelectedMovie,
-      selectedMovie,
-      info,
-      fetchMovie
+      setSelectedMovie
     } = this.props;
     return (
       <Container>

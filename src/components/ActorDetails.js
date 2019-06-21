@@ -14,6 +14,7 @@ const ActorDetails = props => {
             <Col sm={4}>
               <img
                 className="image"
+                alt={actor.name}
                 src={`${POSTER_IMG_BASE_URL}${actor.profile_path}`}
               />
             </Col>

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import Search from './components/Search';
-import Rating from './components/Rating';
 import Results from './components/Results';
 import './explore.scss';
 

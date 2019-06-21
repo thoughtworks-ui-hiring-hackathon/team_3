@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { API_KEY } from '../config/api-keys';
 
 export const SET_ACTOR_DETAILS = 'SET_MOBILE_TYPE_RESPONSE';
