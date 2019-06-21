@@ -1,10 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Movie = ({ image, title, movieType, stars, movieId, setSelectedMovie }) => {
+const Movie = ({
+  image,
+  title,
+  movieType,
+  stars,
+  movieId,
+  setSelectedMovie
+}) => {
   return (
     <div className="movie-wrapper">
-      <img className="movie-image" src={image} onClick={() => setSelectedMovie(movieId)} alt={title} />
+      <img
+        className="movie-image"
+        src={image}
+        onClick={() => setSelectedMovie(movieId)}
+        alt={title}
+      />
       <h4 className="movie-name">{title}</h4>
       <div className="movie-type">{movieType}</div>
       <div className="movie-ratings">{stars}</div>

@@ -1,4 +1,8 @@
-import { SET_MOBILE_TYPE_RESPONSE, CLEAR_SELECTED_MOVIE, SET_SELECTED_MOVIE } from '../actions/movies-actions';
+import {
+  SET_MOBILE_TYPE_RESPONSE,
+  CLEAR_SELECTED_MOVIE,
+  SET_SELECTED_MOVIE
+} from '../actions/movies-actions';
 
 export default (state = {}, action) => {
   const { type, payload } = action;
@@ -11,7 +15,7 @@ export default (state = {}, action) => {
       };
       return newState;
     case CLEAR_SELECTED_MOVIE:
-      const {selectedMovie, ...restState} = state;
+      const { selectedMovie, ...restState } = state;
       return restState;
     default:
       return state;

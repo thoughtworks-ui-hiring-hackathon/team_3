@@ -3,17 +3,21 @@ import { connect } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 
 import MovieList from '../../components/MovieList';
-import { getMoviesByType, setSelectedMovie, clearSelectedMovie } from '../../actions/movies-actions';
+import {
+  getMoviesByType,
+  setSelectedMovie,
+  clearSelectedMovie
+} from '../../actions/movies-actions';
 import { fetchMovie } from '../../actions/movie-actions';
 import { MOVIE_CATEGORY } from '../../consts';
 import './home.scss';
-import MovieDetailsPopup from "../../components/MovieDetailsPopup";
+import MovieDetailsPopup from '../../components/MovieDetailsPopup';
 
 class Home extends React.PureComponent {
   render() {
     const {
       getMoviesByType,
-      movieType ,
+      movieType,
       setSelectedMovie,
       clearSelectedMovie,
       selectedMovie,
@@ -46,9 +50,9 @@ class Home extends React.PureComponent {
 }
 
 const mapStateToProps = state => {
-  const {movieType, movieReducer} = state;
-  const {selectedMovie} = movieType;
-  const {info} = movieReducer;
+  const { movieType, movieReducer } = state;
+  const { selectedMovie } = movieType;
+  const { info } = movieReducer;
   return {
     movieType,
     selectedMovie,

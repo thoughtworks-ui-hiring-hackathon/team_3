@@ -24,19 +24,17 @@ export const getMoviesByType = type => {
   };
 };
 
-export const setSelectedMovie = (id) => dispatch => {
+export const setSelectedMovie = id => dispatch => {
   return dispatch({
     type: SET_SELECTED_MOVIE,
     payload: {
       selectedMovie: id
     }
-  })
-}
+  });
+};
 
 export const clearSelectedMovie = () => dispatch => {
   return dispatch({
     type: CLEAR_SELECTED_MOVIE
-  })
-}
-
-
+  });
+};
