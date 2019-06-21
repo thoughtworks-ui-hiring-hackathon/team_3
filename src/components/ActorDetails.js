@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import { isEmpty } from 'lodash';
-import { IMG_BASE_URL } from '../config/constants.js';
+import { POSTER_IMG_BASE_URL } from '../config/constants.js';
 
 const ActorDetails = props => {
   const { actor, filmography } = props;
@@ -14,7 +14,7 @@ const ActorDetails = props => {
             <Col sm={4}>
               <img
                 className="image"
-                src={`${IMG_BASE_URL}${actor.profile_path}`}
+                src={`${POSTER_IMG_BASE_URL}${actor.profile_path}`}
               />
             </Col>
             <Col sm={8}>

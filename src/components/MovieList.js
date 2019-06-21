@@ -1,5 +1,5 @@
 import React from 'react';
-import { IMG_BASE_URL } from '../config/constants.js';
+import { POSTER_IMG_BASE_URL } from '../config/constants.js';
 import Movie from './Movie';
 import { MOVIE_CATEGORY_STRING } from '../config/constants.js';
 import { isEmpty } from 'lodash';
@@ -33,7 +33,7 @@ class MovieList extends React.PureComponent {
         <Movie
           key={currentResult.id}
           title={currentResult.title}
-          image={`${IMG_BASE_URL}${currentResult.poster_path}`}
+          image={`${POSTER_IMG_BASE_URL}${currentResult.poster_path}`}
           movieId={currentResult.id}
           movieType={currentResult.genre_ids}
           stars={currentResult.vote_average}
