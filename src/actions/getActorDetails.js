@@ -15,11 +15,10 @@ const setActorDetails = (data) => dispatch => {
 
 export const getActorDetails = (personId) => {
     return (dispatch) => {
-        const url = `https://api.themoviedb.org/3/person/${personId}/?language=en-US&api_key=`;
-        return axios.get(`${url}${API_KEY}`)
-            .then((response) => {
-                dispatch(setActorDetails(response.data))
-            })
+        const url = `https://api.themoviedb.org/3/person/${personId}?api_key=${API_KEY}&language=en-US`;
+        return fetch(url)
+            .then((response) => response.json())
+            .then(response => dispatch(setActorDetails(response)))
     }
 }
 
@@ -34,10 +33,9 @@ const setActorFilmography = (data) => dispatch => {
 
 export const getActorFilmography = (personId) => {
     return (dispatch) => {
-        const url = `https://api.themoviedb.org/3/person/${personId}/movie_credits/?language=en-US&api_key=`;
-        return axios.get(`${url}${API_KEY}`)
-            .then((response) => {
-                dispatch(setActorFilmography(response.data))
-            })
+        const url = `https://api.themoviedb.org/3/person/${personId}/movie_credits?api_key=${API_KEY}&language=en-US`;
+        return fetch(url)
+            .then((response) => response.json())
+            .then(response=> dispatch(setActorFilmography(response)))
     }
 }
