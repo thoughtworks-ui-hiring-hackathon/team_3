@@ -10,4 +10,12 @@
   img {
     max-width: 100%;
   }
+  .movie-name {
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-between;
+    i {
+      font-size: 18px;
+    }
+  }
 }
