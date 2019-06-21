@@ -24,18 +24,10 @@ const RelatedMovies = ({ movieId }) => {
       </p>
     )
   }
-
-  let slides = [{
-    image: '',
-    title: 'slide 1'
-  }, {
-    image: '',
-    title: 'slide 2'
-  }]
   return (
     <div className="related-movies">
-      Related movies {movieId}
-      <Carousel slides={slides} />
+      <h2>Related movies</h2>
+      <Carousel slides={res.results} />
     </div>
   )
 }

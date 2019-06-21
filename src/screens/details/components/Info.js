@@ -12,22 +12,22 @@ const Info = ({ info }) => {
   // Get genres
   genres = isEmpty(genres) ? [] : genres
   let genresHtml = genres.map((genre) => (
-    <span>{`${genre.name}, `}</span>
+    <span key={genre.id}>{`${genre.name}, `}</span>
   ))
 
   // Get cast
   let { cast } = credits
   cast = isEmpty(cast) ? [] : cast
-  let castsHtml = cast.map((item) => (
-    <span>{`${item.name}, `}</span>
+  let castsHtml = cast.map((item, index) => (
+    <span key={item.cast_id}>{`${item.name}, `}</span>
   ))
 
   // Get director
   let { crew } = credits
   crew = isEmpty(crew) ? [] : crew
   let directors = crew.filter((item) => item.department === 'Directing')
-  let directorsHtml = directors.map((item) => (
-    <span>{`${item.name} `}</span>
+  let directorsHtml = directors.map((item, index) => (
+    <span key={index}>{`${item.name} `}</span>
   ))
 
   return (
