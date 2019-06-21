@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import {Container, Row, Col} from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import Search from './components/Search'
-import Rating from './components/Rating'
-import Results from './components/Results'
+import Search from './components/Search';
+import Rating from './components/Rating';
+import Results from './components/Results';
 import './explore.scss';
 
 const Explore = () => {
@@ -11,8 +11,8 @@ const Explore = () => {
   const [rating, setRating] = useState('');
 
   const handleFormSubmit = e => e.preventDefault();
-  const handleOnQueryChange = e => setQuery(e.target.value)
-  const handleRatingChange = e => setRating(e.target.value)
+  const handleOnQueryChange = e => setQuery(e.target.value);
+  const handleRatingChange = e => setRating(e.target.value);
 
   return (
     <div id="explore" className="page">
@@ -23,7 +23,8 @@ const Explore = () => {
               <Form.Group controlId="formBasicEmail">
                 <Form.Control
                   type="text"
-                  placeholder="Search movies, actors, genre..." onChange={handleOnQueryChange}
+                  placeholder="Search movies, actors, genre..."
+                  onChange={handleOnQueryChange}
                   value={query}
                 />
               </Form.Group>
@@ -33,7 +34,16 @@ const Explore = () => {
             <h4>Movie Rating</h4>
             <Form onSubmit={handleFormSubmit}>
               <Form.Group controlId="formBasicEmail">
-                <Form.Control type="range" id="rating" name="rating" min="0" max="10" step="1" onChange={handleRatingChange} value={rating} />
+                <Form.Control
+                  type="range"
+                  id="rating"
+                  name="rating"
+                  min="0"
+                  max="10"
+                  step="1"
+                  onChange={handleRatingChange}
+                  value={rating}
+                />
               </Form.Group>
             </Form>
           </Col>
@@ -42,7 +52,6 @@ const Explore = () => {
       </Container>
     </div>
   );
-
-}
+};
 
 export default Explore;

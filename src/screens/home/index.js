@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Container from 'react-bootstrap/Container'
+import Container from 'react-bootstrap/Container';
 
 import MovieList from '../../components/MovieList';
 import { getMoviesByType } from '../../actions/movies-actions';

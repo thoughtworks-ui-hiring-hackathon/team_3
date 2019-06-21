@@ -8,9 +8,16 @@ const Rating = () => {
   return (
     <Form onSubmit={handleFormSubmit}>
       <Form.Group controlId="formBasicEmail">
-        <Form.Control type="range" min="1" max="10" step="1" onChange={setRating} value={rating} />
+        <Form.Control
+          type="range"
+          min="1"
+          max="10"
+          step="1"
+          onChange={setRating}
+          value={rating}
+        />
       </Form.Group>
     </Form>
-  )
-}
+  );
+};
 export default Rating;
