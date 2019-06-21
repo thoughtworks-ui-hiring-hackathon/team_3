@@ -1,7 +1,7 @@
-import React from 'react'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -10,11 +10,15 @@ const Header = () => {
       <Navbar.Toggle aria-controls="primary-navigation" />
       <Navbar.Collapse id="primary-navigation">
         <Nav className="mr-auto">
-          <Link className="nav-link" to="/">Home</Link>
-          <Link className="nav-link" to="/expore">Explore</Link>
+          <Link className="nav-link" to="/">
+            Home
+          </Link>
+          <Link className="nav-link" to="/expore">
+            Explore
+          </Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-  )
-}
+  );
+};
 export default Header;

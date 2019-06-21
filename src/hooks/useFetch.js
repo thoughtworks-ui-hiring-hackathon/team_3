@@ -1,38 +1,29 @@
 import React, { useRef, useReducer, useEffect } from 'react';
 import isEqual from 'lodash/isEqual';
-import queryString from 'query-string'
+import queryString from 'query-string';
 
 import { API_KEY } from '../config/api-keys.js';
-const FETCH_START = 'FETCH_START'
-const FETCH_SUCCEDED = 'FETCH_SUCCEDED'
-const FETCH_FAILED = 'FETCH_FAILED'
+const FETCH_START = 'FETCH_START';
+const FETCH_SUCCEDED = 'FETCH_SUCCEDED';
+const FETCH_FAILED = 'FETCH_FAILED';
 
 const fetchReducer = (state, action) => {
   switch (action.type) {
     case FETCH_START:
-      return Object.assign(
-        {}, state,
-        {
-          loading: true
-        }
-      );
+      return Object.assign({}, state, {
+        loading: true
+      });
     case FETCH_SUCCEDED:
-      return Object.assign(
-        {}, state,
-        {
-          loading: false,
-          res: action.data
-        }
-      );
+      return Object.assign({}, state, {
+        loading: false,
+        res: action.data
+      });
     case FETCH_FAILED:
-      return Object.assign(
-        {}, state,
-        {
-          loading: false,
-          res: {},
-          error: action.error
-        }
-      );
+      return Object.assign({}, state, {
+        loading: false,
+        res: {},
+        error: action.error
+      });
     default:
       throw new Error(`Bad action ${action.type} for fetchReducer reducer.`);
   }
@@ -51,7 +42,7 @@ export default function useFetch({ url, params, method = 'GET' }) {
   params = Object.assign({}, params, {
     api_key: API_KEY,
     language: 'en-US'
-  })
+  });
   if (method === 'GET') {
     url = url + '?' + queryString.stringify(params);
   }
