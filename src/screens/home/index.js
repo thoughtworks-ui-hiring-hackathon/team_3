@@ -34,12 +34,12 @@ class Home extends React.PureComponent {
           movieType={movieType}
           setSelectedMovie={setSelectedMovie}
         />
-        <MovieDetailsPopup
-            clearSelectedMovie={clearSelectedMovie}
-            selectedMovie={selectedMovie}
-            fetchMovie={fetchMovie}
-            info={info}
-        />
+        {/*<MovieDetailsPopup*/}
+        {/*    clearSelectedMovie={clearSelectedMovie}*/}
+        {/*    selectedMovie={selectedMovie}*/}
+        {/*    fetchMovie={fetchMovie}*/}
+        {/*    info={info}*/}
+        {/*/>*/}
       </Container>
     );
   }
