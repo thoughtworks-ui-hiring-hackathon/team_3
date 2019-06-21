@@ -7,7 +7,7 @@ const Info = ({ info }) => {
   if (isEmpty(info)) {
     return null;
   }
-  let { title, overview, genres, credits, popularity } = info;
+  let { title, overview, genres, credits, vote_average } = info;
 
   // Get genres
   genres = isEmpty(genres) ? [] : genres;
@@ -54,8 +54,8 @@ const Info = ({ info }) => {
               <span>{directorsHtml}</span>
             </div>
             <div className="movie--card-row">
-              <strong>Popularity</strong>
-              <span>{popularity}</span>
+              <strong>Ratings</strong>
+              <span>{vote_average}</span>
             </div>
           </section>
         </Col>
