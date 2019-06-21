@@ -1,34 +1,33 @@
-import React from 'react'
-import { Row, Col } from 'react-bootstrap'
-import isEmpty from 'lodash/isEmpty'
+import React from 'react';
+import { Row, Col } from 'react-bootstrap';
+import isEmpty from 'lodash/isEmpty';
 
 const Info = ({ info }) => {
-
   if (isEmpty(info)) {
     return null;
   }
-  let { title, overview, genres, credits, popularity } = info
+  let { title, overview, genres, credits, popularity } = info;
 
   // Get genres
-  genres = isEmpty(genres) ? [] : genres
-  let genresHtml = genres.map((genre) => (
+  genres = isEmpty(genres) ? [] : genres;
+  let genresHtml = genres.map(genre => (
     <span key={genre.id}>{`${genre.name}, `}</span>
-  ))
+  ));
 
   // Get cast
-  let { cast } = credits
-  cast = isEmpty(cast) ? [] : cast
+  let { cast } = credits;
+  cast = isEmpty(cast) ? [] : cast;
   let castsHtml = cast.map((item, index) => (
     <span key={item.cast_id}>{`${item.name}, `}</span>
-  ))
+  ));
 
   // Get director
-  let { crew } = credits
-  crew = isEmpty(crew) ? [] : crew
-  let directors = crew.filter((item) => item.department === 'Directing')
+  let { crew } = credits;
+  crew = isEmpty(crew) ? [] : crew;
+  let directors = crew.filter(item => item.department === 'Directing');
   let directorsHtml = directors.map((item, index) => (
     <span key={index}>{`${item.name} `}</span>
-  ))
+  ));
 
   return (
     <div className="movie--info">
@@ -59,7 +58,7 @@ const Info = ({ info }) => {
         </Col>
       </Row>
     </div>
-  )
-}
+  );
+};
 
 export default Info;
