@@ -1,10 +1,10 @@
-import { createHashHistory } from 'history'
+import { createBrowserHistory } from 'history'
 import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk';
 import { routerMiddleware } from 'connected-react-router'
 import createRootReducer from './reducers/root-reducer'
 
-export const history = createHashHistory()
+export const history = createBrowserHistory()
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
