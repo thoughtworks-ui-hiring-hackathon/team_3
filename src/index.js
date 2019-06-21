@@ -6,13 +6,13 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import configureStore from './store';
 import './scss/_index.css';
 import App from './app';
-import Movie from './screens/movie';
+import Details from './screens/details';
 
 ReactDOM.render(
 	<Provider store={configureStore()}>
 		<Router>
 			<Route path="/" component={App}/>
-			<Route path="/movie/:ID" component={Movie}/>
+			<Route path="/movie/:ID" component={Details}/>
 		</Router>
 	</Provider>,
 	document.getElementById('root')
