@@ -5,6 +5,7 @@ import isEmpty from 'lodash/isEmpty'
 import Container from 'react-bootstrap/Container'
 import Banner from './components/Banner'
 import Info from './components/Info'
+import RelatedMovies from './components/RelatedMovies'
 
 import './details.scss'
 
@@ -16,7 +17,7 @@ class Details extends React.PureComponent {
   }
 
   render() {
-    let { movieReducer } = this.props;
+    let { movieReducer, match } = this.props;
     let { isFetching, info, error} = movieReducer;
 
     if (isFetching) {
@@ -35,11 +36,11 @@ class Details extends React.PureComponent {
 
     return (
       <>
-      <Container>
-        <h1>Movie Details</h1>
         <Banner info={info} />
-        <Info info={info} />
-      </Container>
+        <Container>
+          <Info info={info} />
+          <RelatedMovies movieId={match.params.ID} />
+        </Container>
       </>
     )
   }
