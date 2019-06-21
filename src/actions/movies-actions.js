@@ -3,6 +3,8 @@ import { API_KEY } from '../config/api-keys';
 import { MOVIE_CATEGORY_URL, MOVIE_CATEGORY } from '../consts';
 
 export const SET_MOBILE_TYPE_RESPONSE = 'SET_MOBILE_TYPE_RESPONSE';
+export const SET_SELECTED_MOVIE = 'SET_SELECTED_MOVIE';
+export const CLEAR_SELECTED_MOVIE = 'CLEAR_SELECTED_MOVIE';
 
 const setMobileResponse = (response, type) => dispatch => {
   return dispatch({
@@ -21,3 +23,20 @@ export const getMoviesByType = type => {
     });
   };
 };
+
+export const setSelectedMovie = (id) => dispatch => {
+  return dispatch({
+    type: SET_SELECTED_MOVIE,
+    payload: {
+      selectedMovie: id
+    }
+  })
+}
+
+export const clearSelectedMovie = () => dispatch => {
+  return dispatch({
+    type: CLEAR_SELECTED_MOVIE
+  })
+}
+
+

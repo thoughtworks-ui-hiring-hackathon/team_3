@@ -22,7 +22,7 @@ class MovieList extends React.PureComponent {
   }
 
   render() {
-    const { type, movieType = {} } = this.props;
+    const { type, movieType = {}, setSelectedMovie } = this.props;
     const response = movieType[type];
     if (isEmpty(response)) {
       return null;
@@ -37,6 +37,7 @@ class MovieList extends React.PureComponent {
           movieId={currentResult.id}
           movieType={currentResult.genre_ids}
           stars={currentResult.vote_average}
+          setSelectedMovie={setSelectedMovie}
         />
       );
     });
