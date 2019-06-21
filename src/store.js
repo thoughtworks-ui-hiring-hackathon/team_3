@@ -1,19 +1,25 @@
-import {createStore, applyMiddleware, compose} from 'redux';
+import { createHashHistory } from 'history'
+import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk';
-import rootReducer from './reducers/root-reducer';
+import { routerMiddleware } from 'connected-react-router'
+import createRootReducer from './reducers/root-reducer'
+
+export const history = createHashHistory()
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 
-const reduxEnhancer = composeEnhancers(
-	applyMiddleware(thunk)
-)
+export default function configureStore(preloadedState) {
+  const store = createStore(
+    createRootReducer(history), // root reducer with router state
+    preloadedState,
+    composeEnhancers(
+      applyMiddleware(
+        routerMiddleware(history),
+				thunk
+      ),
+    ),
+  )
 
-
-export default function configureStore(initialState = {}) {
-	return createStore(
-		rootReducer,
-		initialState,
-		reduxEnhancer
-	);
+  return store
 }

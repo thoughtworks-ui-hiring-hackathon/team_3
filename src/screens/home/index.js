@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import '../../scss/style.scss';
+import { Link } from 'react-router-dom'
+
 import {simpleAction} from '../../actions/simple-action';
 
 class Home extends React.PureComponent {
@@ -9,6 +11,7 @@ class Home extends React.PureComponent {
 		return (
 			<div className="page">
         Home page
+				<Link to="/movie/2121">View movie</Link>
 			</div>
 		);
 	}
