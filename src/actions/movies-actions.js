@@ -13,7 +13,7 @@ const setMobileResponse = (response, type) => dispatch => {
   });
 };
 
-export const getMovieByType = type => {
+export const getMoviesByType = type => {
   return dispatch => {
     const url = MOVIE_CATEGORY_URL[type];
     return axios.get(`${url}${API_KEY}`).then(response => {

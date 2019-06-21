@@ -15,9 +15,9 @@ var carouselSettings = {
 
 class MovieList extends React.PureComponent {
   componentDidMount() {
-    const { type, movieType = {}, getMovieByType } = this.props;
+    const { type, movieType = {}, getMoviesByType } = this.props;
     if (!movieType[type]) {
-      getMovieByType(type);
+      getMoviesByType(type);
     }
   }
 
