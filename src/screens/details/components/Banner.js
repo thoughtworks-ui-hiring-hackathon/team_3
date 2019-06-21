@@ -1,8 +1,9 @@
 import React from 'react'
-const Banner = ({}) => {
+const Banner = ({ info }) => {
+  let { poster_path } = info
   return (
-    <div className="banner">
-      <img src="https://image.tmdb.org/t/p/original/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" alt="banner" />
+    <div className="movie--banner">
+      <img src={`https://image.tmdb.org/t/p/original/${poster_path}`} alt="banner" />
     </div>
   )
 }
